@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuhang.trading.mapper.account.AccountRequestMapper">
+
+    <resultMap id="Account" type="com.yuhang.trading.entity.account.AccountRequest">
+        <id column="id" property="id" javaType="String" jdbcType="CHAR"/>
+        <result column="name" property="name" javaType="String" jdbcType="VARCHAR"/>
+        <result column="password" property="password" javaType="String" jdbcType="CHAR"/>
+        <result column="certification_no" property="certificationNo" javaType="String" jdbcType="VARCHAR"/>
+        <result column="certification_type" property="certificationType" javaType="String" jdbcType="CHAR"/>
+        <result column="profession" property="profession" javaType="String" jdbcType="CHAR"/>
+        <result column="birthday" property="birthday" javaType="java.util.Date" jdbcType="DATE"/>
+        <result column="phone" property="profession" javaType="String" jdbcType="VARCHAR"/>
+        <result column="address_country" property="addressCountry" javaType="String" jdbcType="CHAR"/>
+        <result column="address_province" property="addressProvince" javaType="String" jdbcType="VARCHAR"/>
+        <result column="address_city" property="addressCity" javaType="String" jdbcType="VARCHAR"/>
+        <result column="address_street" property="addressStreet" javaType="String" jdbcType="VARCHAR"/>
+        <result column="address_postcode" property="addressPostcode" javaType="String" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" javaType="Date" jdbcType="DATETIMEOFFSET"/>
+        <result column="account_id" property="accountId" javaType="String" jdbcType="CHAR"/>
+    </resultMap>
+
+    <sql id="allColumns">
+        name,
+        password,
+        certification_type,
+        certification_no,
+        profession,
+        birthday,
+        phone,
+        address_country,
+        address_province,
+        address_city,
+        address_street,
+        address_postcode,
+        create_time,
+        account_id
+    </sql>
+
+    <insert id="insert" parameterType="com.yuhang.trading.entity.account.Account">
+        insert into ac_account_request (<include refid="allColumns"/>) value (
+        #{account.name},#{account.password},#{account.certificationType},#{account.certificationNo},
+        #{account.profession},#{account.birthday},#{account.phone},#{account.addressCountry},
+        #{account.addressProvince},#{account.addressCity},#{account.addressStreet},
+        #{account.addressPostcode},#{account.createTime},#{account.accountId}
+        )
+    </insert>
+
+</mapper>
