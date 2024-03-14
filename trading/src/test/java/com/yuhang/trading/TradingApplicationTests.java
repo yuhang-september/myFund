@@ -1,10 +1,10 @@
-package com.yuhang.myfund;
+package com.yuhang.trading;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MyFundApplicationTests {
+class TradingApplicationTests {
 
     @Test
     void contextLoads() {
