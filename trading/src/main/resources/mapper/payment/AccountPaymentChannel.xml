@@ -5,7 +5,7 @@
 <mapper namespace="com.yuhang.trading.mapper.payment.AccountPaymentChannelMapper">
 
     <resultMap id="AccountPaymentChannel" type="com.yuhang.trading.entity.payment.AccountPaymentChannel">
-        <id column="id" property="id" javaType="int" jdbcType="INTEGER"/>
+        <id column="id" property="id" javaType="String" jdbcType="VARCHAR"/>
         <result column="bank_account_no" property="bankAccountNo" javaType="String" jdbcType="VARCHAR"/>
         <result column="account_no" property="accountNo" javaType="String" jdbcType="CHAR"/>
         <result column="payment_channel" property="paymentChannel" javaType="String" jdbcType="CHAR"/>
@@ -22,6 +22,10 @@
         insert into ac_payment_channel (id, account_no, bank_account_no, payment_channel)
         values (#{paymentChannel.id}, #{paymentChannel.accountNo},#{paymentChannel.bankAccountNo},#{paymentChannel.paymentChannel})
     </insert>
+
+    <select id="queryByAccountNo" resultMap="AccountPaymentChannel">
+        select <include refid="allColumns" /> from ac_payment_channel where account_no = #{accountNo}
+    </select>
 
 
 </mapper>

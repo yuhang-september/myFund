@@ -3,6 +3,8 @@ package com.yuhang.trading.mapper.payment;
 import com.yuhang.trading.entity.payment.AccountPaymentChannel;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 /**
  * Description:
  *
@@ -12,4 +14,6 @@ import org.apache.ibatis.annotations.Param;
 public interface AccountPaymentChannelMapper {
 
     boolean insert(@Param("paymentChannel") AccountPaymentChannel accountPaymentChannel);
+
+    List<AccountPaymentChannel> queryByAccountNo(String accountNo);
 }

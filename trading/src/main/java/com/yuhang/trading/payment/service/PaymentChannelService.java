@@ -12,6 +12,7 @@ import com.yuhang.trading.mapper.payment.PaymentChannelMapper;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -39,6 +40,7 @@ public class PaymentChannelService {
         accountPaymentChannel.setAccountNo(accountInfo.getId());
         accountPaymentChannel.setBankAccountNo(bankCard.getBankAccountNo());
         accountPaymentChannel.setPaymentChannel(getResponsiblePaymentChannel(bankCard.getBank()));
+        //todo add the accountPaymentChannel request to database
         return accountPaymentChannelMapper.insert(accountPaymentChannel);
     }
 
@@ -48,5 +50,9 @@ public class PaymentChannelService {
             throw new RuleException(JsonResult.UNKNOWN, "Please check your bank card information.");
         }
         return paymentChannel.getPaymentChannel();
+    }
+
+    public List<AccountPaymentChannel> queryAllAccountPaymentChannels(String accountId) {
+        return accountPaymentChannelMapper.queryByAccountNo(accountId);
     }
 }
