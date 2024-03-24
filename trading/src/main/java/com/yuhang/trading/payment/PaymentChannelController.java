@@ -6,7 +6,6 @@ import com.yuhang.trading.common.RedisService;
 import com.yuhang.trading.common.RuleException;
 import com.yuhang.trading.common.utils.SessionUtil;
 import com.yuhang.trading.entity.account.Account;
-import com.yuhang.trading.entity.payment.AccountPaymentChannel;
 import com.yuhang.trading.entity.payment.BankCard;
 import com.yuhang.trading.payment.service.PaymentChannelService;
 import jakarta.annotation.Resource;
@@ -15,8 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * Description:
@@ -37,7 +34,7 @@ public class PaymentChannelController {
     /**
      * Adding a bank card in a fund trading system is complicated, we deal with it simply.
      * Just adding a payment to an account, don't need to use the interfaces of banks and any authorizations.
-     * */
+     */
     @PostMapping("/addCard")
     public JsonResult addCard(@RequestBody BankCard bankCard) throws RuleException {
         validate(bankCard);
