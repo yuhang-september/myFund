@@ -1,6 +1,6 @@
 CREATE TABLE `AC_ACCOUNT`
 (
-    `id`                 char(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci     NOT NULL COMMENT 'user id',
+    `id`                 char(49) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci     NOT NULL COMMENT 'user id',
     `name`               varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'full name: first name + last name',
     `certification_no`   varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci  NOT NULL COMMENT 'certification number',
     `certification_type` char(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci      NOT NULL COMMENT 'certification types are in dictionary table',

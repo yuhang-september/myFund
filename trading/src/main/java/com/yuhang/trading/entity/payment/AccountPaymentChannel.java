@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Description:
@@ -20,4 +21,7 @@ public class AccountPaymentChannel implements Serializable {
     private String accountNo;
     private String bankAccountNo;
     private String paymentChannel;
+    private int status;
+    private Date createTime;
+    private Date lastUpdateTime;
 }

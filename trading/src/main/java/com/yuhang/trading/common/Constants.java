@@ -17,4 +17,8 @@ public class Constants {
     public static final String CERTIFICATION_TYPE = "certificationType";
 
     public static final String BANK = "bank";
+
+    public static final int PAYMENT_CHANNEL_STATUS_ACTIVE = 0;
+    public static final int PAYMENT_CHANNEL_STATUS_FROZEN = 1;
+    public static final int PAYMENT_CHANNEL_STATUS_INACTIVE = 2;
 }

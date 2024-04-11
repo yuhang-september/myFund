@@ -9,6 +9,7 @@ import jakarta.annotation.Resource;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.UUID;
@@ -47,6 +48,7 @@ public class AccountService {
      * If we have a background system, we can search for a customer's account information including the creation and each modification.
      * @param account the information of an account
      * */
+    @Transactional()
     public void saveAccount(Account account) {
         if (StringUtils.isBlank(account.getId())) {
             account.setId(generateAccountId());
@@ -66,6 +68,7 @@ public class AccountService {
         return accountMapper.selectById(id);
     }
 
+    @Transactional
     public boolean modifyAccount(Account account) {
         account.setLastUpdateTime(DateUtil.getCurrentDate());
         accountRequestMapper.insert(getCopiedAccountRequest(account));

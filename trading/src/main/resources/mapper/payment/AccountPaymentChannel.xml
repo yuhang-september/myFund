@@ -9,18 +9,27 @@
         <result column="bank_account_no" property="bankAccountNo" javaType="String" jdbcType="VARCHAR"/>
         <result column="account_no" property="accountNo" javaType="String" jdbcType="CHAR"/>
         <result column="payment_channel" property="paymentChannel" javaType="String" jdbcType="CHAR"/>
+        <result column="status" property="status" javaType="int" jdbcType="INTEGER"/>
+        <result column="create_time" property="createTime" javaType="Date" jdbcType="TIMESTAMP"/>
+        <result column="last_update_time" property="lastUpdateTime" javaType="Date" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <sql id="allColumns">
         id,
         account_no,
         bank_account_no,
-        payment_channel
+        payment_channel,
+        status,
+        create_time,
+        last_update_time
     </sql>
 
     <insert id="insert" parameterType="com.yuhang.trading.entity.payment.AccountPaymentChannel">
-        insert into ac_payment_channel (id, account_no, bank_account_no, payment_channel)
-        values (#{paymentChannel.id}, #{paymentChannel.accountNo},#{paymentChannel.bankAccountNo},#{paymentChannel.paymentChannel})
+        insert into ac_payment_channel (id, account_no, bank_account_no, payment_channel, status, create_time,
+                                        last_update_time)
+        values (#{paymentChannel.id}, #{paymentChannel.accountNo}, #{paymentChannel.bankAccountNo},
+                #{paymentChannel.paymentChannel}, #{paymentChannel.status}, #{paymentChannel.createTime},
+                #{paymentChannel.lastUpdateTime})
     </insert>
 
     <select id="queryByAccountNo" resultMap="AccountPaymentChannel">
