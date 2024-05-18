@@ -8,6 +8,7 @@ import com.yuhang.trading.common.utils.SessionUtil;
 import com.yuhang.trading.entity.account.Account;
 import com.yuhang.trading.entity.payment.BankCard;
 import com.yuhang.trading.payment.service.PaymentChannelService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,8 +20,9 @@ import org.springframework.web.bind.annotation.RestController;
  * Description:
  *
  * @author David
- * @Date 2/29/2024 9:04 PM
+ * 2/29/2024 9:04 PM
  */
+@Tag(name="Payment Channel Controller", description = "The controller is to add bank cards and query the relative information.")
 @RestController
 @RequestMapping("/payment")
 public class PaymentChannelController {

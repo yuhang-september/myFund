@@ -1,6 +1,9 @@
 package com.yuhang.trading.entity.account;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -11,29 +14,24 @@ public class Account implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1412989660382068256L;
-    /**
-     * customer's id
-     * */
+    @NotNull
+    @Id
     private String id;
-    /**
-     * userName the full name, first name + last name
-     * */
+
+    @NotNull
+    @Size(min = 1, max = 100)
     private String name;
-    /**
-     * the password must be encoded by MD5.
-     * */
+
+    @NotNull
     private String password;
-    /**
-     * certification number
-     * */
+
+    @NotNull
     private String certificationNo;
-    /**
-     * certification type, if we want to look at the certification type, check the dictionary table
-     * */
+
+    @NotNull
     private String certificationType;
-    /**
-     * customer's profession
-     * */
+
+    @NotNull
     private String profession;
 
     private Date birthday;

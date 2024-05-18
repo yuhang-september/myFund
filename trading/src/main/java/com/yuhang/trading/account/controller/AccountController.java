@@ -4,16 +4,16 @@ import com.yuhang.trading.account.service.AccountService;
 import com.yuhang.trading.common.JsonResult;
 import com.yuhang.trading.common.utils.SessionUtil;
 import com.yuhang.trading.entity.account.Account;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * Description:
- *
  * @author David
- * @Date 2/29/2024 12:56 AM
+ * 2/29/2024 12:56 AM
  */
+@Tag(name="Account Controller", description = "The controller is to operate the information of an account.")
 @RestController
 @RequestMapping("/account")
 public class AccountController {

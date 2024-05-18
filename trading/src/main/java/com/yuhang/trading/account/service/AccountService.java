@@ -19,7 +19,7 @@ import java.util.UUID;
  * The service is used to handle account relevant transactions.
  *
  * @author David
- * @Date 2/27/2024 2:29 AM
+ * 2/27/2024 2:29 AM
  */
 @Service
 public class AccountService {

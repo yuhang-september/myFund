@@ -8,6 +8,7 @@ import com.yuhang.trading.common.RuleException;
 import com.yuhang.trading.common.utils.DateUtil;
 import com.yuhang.trading.common.utils.SessionUtil;
 import com.yuhang.trading.entity.account.Account;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,8 +24,9 @@ import java.util.HashMap;
  * Hide the original error as far as possible.
  *
  * @author David
- * @since 2024/2/27
+ * 2024/2/27
  */
+@Tag(name="Login Controller", description = "The controller is to register or login.")
 @RestController
 public class LoginController {
     @Resource
