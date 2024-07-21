@@ -36,3 +36,5 @@ build/
 *.cmd
 mvnw
 qodana.yaml
+
+.mvn
