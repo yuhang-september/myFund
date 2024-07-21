@@ -1,1 +1,1 @@
-Hello, I am Yuhang, David as my English name.
+This is a simple fund trading system.
