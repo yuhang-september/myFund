@@ -1,8 +1,8 @@
 package com.yuhang.trading.account.service;
 
+import com.yuhang.service.entity.account.Account;
+import com.yuhang.service.entity.account.AccountRequest;
 import com.yuhang.trading.common.utils.DateUtil;
-import com.yuhang.trading.entity.account.Account;
-import com.yuhang.trading.entity.account.AccountRequest;
 import com.yuhang.trading.mapper.account.AccountMapper;
 import com.yuhang.trading.mapper.account.AccountRequestMapper;
 import jakarta.annotation.Resource;
@@ -32,8 +32,9 @@ public class AccountService {
 
     /**
      * The method to generate an account ID, the structure is the timestamp + uuid, the length is 49.
+     *
      * @return String account ID
-     * */
+     */
     public String generateAccountId() {
         return DateUtil.getFormattedDate("yyyyMMddHHmmssSSS") + UUID.randomUUID().toString().replaceAll("-", "");
     }
@@ -46,8 +47,9 @@ public class AccountService {
      * When insert an account data, we should save both account request and account data.
      * The account request is used to record the creation and modification.
      * If we have a background system, we can search for a customer's account information including the creation and each modification.
+     *
      * @param account the information of an account
-     * */
+     */
     @Transactional()
     public void saveAccount(Account account) {
         if (StringUtils.isBlank(account.getId())) {

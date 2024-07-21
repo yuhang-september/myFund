@@ -1,6 +1,6 @@
 package com.yuhang.trading.mapper.payment;
 
-import com.yuhang.trading.entity.payment.PaymentChannel;
+import com.yuhang.service.entity.payment.PaymentChannel;
 
 /**
  * Description:

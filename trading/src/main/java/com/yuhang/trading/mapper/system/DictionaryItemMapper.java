@@ -1,7 +1,6 @@
 package com.yuhang.trading.mapper.system;
 
-import com.yuhang.trading.entity.system.Dictionary;
-import com.yuhang.trading.entity.system.DictionaryItem;
+import com.yuhang.service.entity.system.DictionaryItem;
 
 import java.util.List;
 

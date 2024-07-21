@@ -1,6 +1,6 @@
 package com.yuhang.trading.mapper.account;
 
-import com.yuhang.trading.entity.account.Account;
+import com.yuhang.service.entity.account.Account;
 import org.apache.ibatis.annotations.Param;
 
 public interface AccountMapper {

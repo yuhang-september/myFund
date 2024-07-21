@@ -1,6 +1,6 @@
 package com.yuhang.trading.mapper.system;
 
-import com.yuhang.trading.entity.system.Dictionary;
+import com.yuhang.service.entity.system.Dictionary;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import java.util.List;
  * Description:
  *
  * @author David
- * @Date 2/28/2024 1:54 AM
+ * 2/28/2024 1:54 AM
  */
 public interface DictionaryMapper {
 

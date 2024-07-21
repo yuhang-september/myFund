@@ -1,8 +1,7 @@
 package com.yuhang.trading.common;
 
-import com.yuhang.trading.common.Constants;
-import com.yuhang.trading.entity.system.Dictionary;
-import com.yuhang.trading.entity.system.DictionaryItem;
+import com.yuhang.service.entity.system.Dictionary;
+import com.yuhang.service.entity.system.DictionaryItem;
 import com.yuhang.trading.mapper.system.DictionaryItemMapper;
 import com.yuhang.trading.mapper.system.DictionaryMapper;
 import jakarta.annotation.Resource;

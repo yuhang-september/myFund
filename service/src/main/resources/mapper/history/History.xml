@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuhang.trading.mapper.traderequest.TradeRequestMapper">
+
+    <sql id="allColumns">
+        trade_request_id,
+        fund_code,
+        application_amount,
+        status,
+        confirm_status,
+        confirm_amount,
+        confirm_share,
+        create_time,
+        last_update_time,
+        type,
+        trade_account_id
+    </sql>
+
+    <insert id="insert" parameterType="com.yuhang.service.entity.request.TradeRequest">
+        insert into tr_trade_request (<include refid="allColumns"/>) value (
+        #{request.tradeRequestId},#{request.fundCode},#{request.applicationAmount},#{request.status},
+        #{request.confirmStatus},#{request.confirmAmount},#{request.confirmShare},#{request.createTime},
+        #{request.lastUpdateTime},#{request.type},#{request.trade_account_id}
+        )
+    </insert>
+
+    <select id="query" parameterType="com.yuhang.service.entity.history.HistoryRequest">
+        select
+        <include refid="allColumns"/>
+        from tr_trade_request t left join pd_fund p on t.fund_code = p.fund_code
+        <where>
+            1=1 and
+            t.trade_account_id = #{request.tradeAccountId}
+            <if test="tradeRequestId != null and tradeRequestId != ''">
+                and t.trade_rquest_id = #{request.tradeRequestId}
+            </if>
+            <if test="fundType != null and fundType != ''">
+                and p.type = #{request.fundType}
+            </if>
+            <if test="fundCode != null and fundCode != ''">
+                and t.fund_code = #{request.fundCode}
+            </if>
+            <if test="tradeType != null and tradeType != ''">
+                and t.type = #{request.tradeType}
+            </if>
+            <if test="startDate != null and endDate != null">
+                and create_time between startDate and endDate
+            </if>
+        </where>
+
+    </select>
+</mapper>

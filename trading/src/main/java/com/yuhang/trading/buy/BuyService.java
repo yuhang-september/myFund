@@ -1,9 +1,9 @@
 package com.yuhang.trading.buy;
 
+import com.yuhang.service.entity.request.TradeRequest;
 import com.yuhang.trading.common.Constants;
 import com.yuhang.trading.common.utils.DateUtil;
-import com.yuhang.trading.entity.request.TradeRequest;
-import com.yuhang.trading.mapper.buy.BuyMapper;
+import com.yuhang.trading.rabbitmq.Sender;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +18,7 @@ import java.util.UUID;
 public class BuyService {
 
     @Resource
-    BuyMapper buyMapper;
+    Sender sender;
 
     public void buy(TradeRequest request) {
         String tradeRequestId = UUID.randomUUID().toString().replaceAll("-", "");
@@ -28,7 +28,7 @@ public class BuyService {
         request.setLastUpdateTime(currentDate);
         request.setStatus(Constants.TRADE_REQUEST_STATUS_ORDER);
         request.setType(Constants.TRADE_TYPE_BUY);
-        buyMapper.insert(request);
+        sender.sendToBuyQueue(request);
     }
 
 }
