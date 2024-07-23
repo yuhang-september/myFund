@@ -2,8 +2,8 @@ package com.yuhang.trading.common;
 
 import com.yuhang.service.entity.system.Dictionary;
 import com.yuhang.service.entity.system.DictionaryItem;
-import com.yuhang.trading.mapper.system.DictionaryItemMapper;
-import com.yuhang.trading.mapper.system.DictionaryMapper;
+import com.yuhang.service.mapper.system.DictionaryItemMapper;
+import com.yuhang.service.mapper.system.DictionaryMapper;
 import jakarta.annotation.Resource;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.redis.core.RedisTemplate;

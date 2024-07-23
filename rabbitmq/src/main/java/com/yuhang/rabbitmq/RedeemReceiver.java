@@ -1,5 +1,8 @@
 package com.yuhang.rabbitmq;
 
+import com.yuhang.service.entity.request.TradeRequest;
+import com.yuhang.service.mapper.traderequest.TradeRequestMapper;
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,7 +11,11 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class RedeemReceiver {
-    public void receiveMessage(String message) {
-        System.out.println("Received <" + message + ">");
+
+    @Resource
+    TradeRequestMapper tradeRequestMapper;
+
+    public void receiveMessage(TradeRequest tradeRequest) {
+        tradeRequestMapper.insert(tradeRequest);
     }
 }

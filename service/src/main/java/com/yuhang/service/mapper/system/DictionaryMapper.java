@@ -1,4 +1,4 @@
-package com.yuhang.trading.mapper.system;
+package com.yuhang.service.mapper.system;
 
 import com.yuhang.service.entity.system.Dictionary;
 

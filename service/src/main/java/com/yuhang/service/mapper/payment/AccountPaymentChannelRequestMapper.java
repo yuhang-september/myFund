@@ -1,4 +1,4 @@
-package com.yuhang.trading.mapper.payment;
+package com.yuhang.service.mapper.payment;
 
 import com.yuhang.service.entity.payment.AccountPaymentChannelRequest;
 import org.apache.ibatis.annotations.Param;

@@ -1,4 +1,4 @@
-package com.yuhang.trading.mapper.account;
+package com.yuhang.service.mapper.account;
 
 import com.yuhang.service.entity.account.Account;
 import org.apache.ibatis.annotations.Param;
