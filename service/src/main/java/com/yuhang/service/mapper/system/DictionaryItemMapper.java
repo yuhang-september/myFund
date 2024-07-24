@@ -8,7 +8,7 @@ import java.util.List;
  * Description:
  *
  * @author David
- * @Date 2/28/2024 1:54 AM
+ * 2/28/2024 1:54 AM
  */
 public interface DictionaryItemMapper {
 

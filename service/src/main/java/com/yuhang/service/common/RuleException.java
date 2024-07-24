@@ -1,4 +1,4 @@
-package com.yuhang.trading.common;
+package com.yuhang.service.common;
 
 import lombok.Data;
 

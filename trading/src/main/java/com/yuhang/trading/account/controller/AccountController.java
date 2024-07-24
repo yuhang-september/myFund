@@ -2,8 +2,8 @@ package com.yuhang.trading.account.controller;
 
 import com.yuhang.service.entity.account.Account;
 import com.yuhang.trading.account.service.AccountService;
-import com.yuhang.trading.common.JsonResult;
-import com.yuhang.trading.common.utils.SessionUtil;
+import com.yuhang.service.common.JsonResult;
+import com.yuhang.service.common.utils.SessionUtil;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpSession;

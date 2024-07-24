@@ -2,7 +2,7 @@ package com.yuhang.trading.account.service;
 
 import com.yuhang.service.entity.account.Account;
 import com.yuhang.service.entity.account.AccountRequest;
-import com.yuhang.trading.common.utils.DateUtil;
+import com.yuhang.service.common.utils.DateUtil;
 import com.yuhang.service.mapper.account.AccountMapper;
 import com.yuhang.service.mapper.account.AccountRequestMapper;
 import jakarta.annotation.Resource;

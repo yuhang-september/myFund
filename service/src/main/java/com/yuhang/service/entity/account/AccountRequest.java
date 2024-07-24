@@ -8,7 +8,7 @@ import java.io.Serial;
  * Description:
  * The class is to record the account request of modification.
  * @author David
- * @Date 2/29/2024 12:39 AM
+ * 2/29/2024 12:39 AM
  */
 @Data
 public class AccountRequest extends Account {

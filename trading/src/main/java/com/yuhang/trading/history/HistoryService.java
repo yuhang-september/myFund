@@ -6,7 +6,6 @@ import com.yuhang.service.mapper.traderequest.TradeRequestMapper;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,6 +19,6 @@ public class HistoryService {
     private TradeRequestMapper tradeRequestMapper;
 
     public List<TradeRequest> getHistory(HistoryRequest historyRequest) {
-        return new ArrayList<>(tradeRequestMapper.query(historyRequest));
+        return tradeRequestMapper.query(historyRequest);
     }
 }

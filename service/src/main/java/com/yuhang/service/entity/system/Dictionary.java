@@ -9,7 +9,7 @@ import java.io.Serializable;
  * Description:
  *
  * @author David
- * @Date 2/28/2024 1:50 AM
+ * 2/28/2024 1:50 AM
  */
 @Data
 public class Dictionary implements Serializable {

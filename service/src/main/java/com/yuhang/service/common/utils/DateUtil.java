@@ -1,4 +1,4 @@
-package com.yuhang.trading.common.utils;
+package com.yuhang.service.common.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -8,7 +8,7 @@ import java.util.Date;
  * A utility class to handle date and time.
  *
  * @author David
- * @date 2/27/2024 2:09 AM
+ * 2/27/2024 2:09 AM
  */
 public class DateUtil {
 

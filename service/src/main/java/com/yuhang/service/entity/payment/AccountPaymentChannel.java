@@ -10,7 +10,7 @@ import java.util.Date;
  * Description:
  *
  * @author David
- * @Date 3/13/2024 5:40 PM
+ * 3/13/2024 5:40 PM
  */
 @Data
 public class AccountPaymentChannel implements Serializable {

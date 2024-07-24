@@ -9,5 +9,8 @@ import java.util.List;
 public interface TradeRequestMapper {
 
     void insert(@Param("request") TradeRequest request);
+
     List<TradeRequest> query(@Param("request") HistoryRequest request);
+
+    TradeRequest querySingleTradeRequest(String requestId);
 }

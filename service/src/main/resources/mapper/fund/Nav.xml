@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuhang.service.mapper.fund.NavMapper">
+
+    <resultMap id="Nav" type="com.yuhang.service.entity.fund.Nav">
+        <id column="id" property="id" javaType="String" jdbcType="CHAR"/>
+        <result column="fund_code" property="fundCode" javaType="String" jdbcType="CHAR"/>
+        <result column="nav" property="nav" javaType="Double" jdbcType="DECIMAL"/>
+        <result column="date" property="date" javaType="Date" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="allColumns">
+        id,
+        fund_code,
+        nav,
+        date
+    </sql>
+
+    <select id="selectLastNav" resultMap="Nav">
+        select
+        <include refid="allColumns"/>
+        from pd_nav where fund_code=#{fundCode} order by date desc limit 1
+    </select>
+
+
+</mapper>

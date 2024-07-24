@@ -26,13 +26,11 @@ public class TradeRequest implements Serializable {
     @Min(0)
     private double applicationAmount;
 
+    private double share;
+
     private int status;
 
-    private String confirmStatus;
-
-    private double confirmAmount;
-
-    private double confirmShare;
+    private String paymentChannel;
 
     private Date createTime;
 
@@ -42,4 +40,5 @@ public class TradeRequest implements Serializable {
 
     @NotEmpty
     private String type;
+
 }

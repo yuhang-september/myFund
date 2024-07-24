@@ -1,4 +1,4 @@
-package com.yuhang.trading.common;
+package com.yuhang.service.common;
 
 import com.yuhang.service.entity.system.Dictionary;
 import com.yuhang.service.entity.system.DictionaryItem;
@@ -18,7 +18,7 @@ import java.util.Optional;
  * Description:
  *
  * @author David
- * @Date 2/28/2024 1:46 AM
+ * 2/28/2024 1:46 AM
  */
 @Component
 public class RedisService {

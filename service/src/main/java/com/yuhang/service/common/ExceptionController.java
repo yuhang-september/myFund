@@ -1,4 +1,4 @@
-package com.yuhang.trading.common;
+package com.yuhang.service.common;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * Hide the original error as far as possible.
  *
  * @author David
- * @date 2024/2/27
+ * 2024/2/27
  * */
 @ControllerAdvice
 public class ExceptionController {

@@ -6,7 +6,7 @@ import com.yuhang.service.entity.payment.PaymentChannel;
  * Description:
  *
  * @author David
- * @Date 2/29/2024 10:36 PM
+ * 2/29/2024 10:36 PM
  */
 public interface PaymentChannelMapper {
 

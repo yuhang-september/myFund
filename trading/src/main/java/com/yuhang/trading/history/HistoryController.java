@@ -2,8 +2,8 @@ package com.yuhang.trading.history;
 
 import com.yuhang.service.entity.history.HistoryRequest;
 import com.yuhang.service.entity.request.TradeRequest;
-import com.yuhang.trading.common.JsonResult;
-import com.yuhang.trading.common.RuleException;
+import com.yuhang.service.common.JsonResult;
+import com.yuhang.service.common.RuleException;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import org.apache.commons.lang3.StringUtils;

@@ -1,10 +1,10 @@
-package com.yuhang.trading.common;
+package com.yuhang.service.common;
 
 /**
  * Description:
  *
  * @author David
- * @Date 2/28/2024 11:58 PM
+ * 2/28/2024 11:58 PM
  */
 public class Constants {
 
@@ -25,6 +25,10 @@ public class Constants {
     public static final String TRADE_TYPE_BUY = "T1";
     public static final String TRADE_TYPE_REDEEM = "T2";
     public static final String TRADE_TYPE_CONVERT = "T3";
+
+    public static final String TRADE_BUSINESS_TYPE_BUY = "01";
+    public static final String TRADE_BUSINESS_TYPE_REDEEM = "02";
+    public static final String TRADE_BUSINESS_TYPE_CONVERT = "03";
 
     public static final int TRADE_REQUEST_STATUS_ORDER = 0;
     public static final int TRADE_REQUEST_STATUS_SUCCESS = 1;

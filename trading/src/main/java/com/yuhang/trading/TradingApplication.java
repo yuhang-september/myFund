@@ -1,15 +1,18 @@
 package com.yuhang.trading;
 
-import com.yuhang.trading.common.RedisService;
+import com.yuhang.service.common.RedisService;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.session.config.annotation.web.http.EnableSpringHttpSession;
+import org.springframework.stereotype.Component;
 
 @SpringBootApplication
 @EnableSpringHttpSession
-@MapperScan
+@MapperScan("com.yuhang.service.mapper")
+@ComponentScan(basePackages = "com.yuhang")
 public class TradingApplication {
 
 

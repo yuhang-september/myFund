@@ -1,10 +1,10 @@
 package com.yuhang.trading.payment.service;
 
-import com.yuhang.trading.common.Constants;
-import com.yuhang.trading.common.JsonResult;
-import com.yuhang.trading.common.RuleException;
-import com.yuhang.trading.common.utils.DateUtil;
-import com.yuhang.trading.common.utils.SessionUtil;
+import com.yuhang.service.common.Constants;
+import com.yuhang.service.common.JsonResult;
+import com.yuhang.service.common.RuleException;
+import com.yuhang.service.common.utils.DateUtil;
+import com.yuhang.service.common.utils.SessionUtil;
 import com.yuhang.service.entity.account.Account;
 import com.yuhang.service.entity.payment.AccountPaymentChannel;
 import com.yuhang.service.entity.payment.AccountPaymentChannelRequest;
@@ -26,7 +26,7 @@ import java.util.UUID;
  * Description:
  *
  * @author David
- * @Date 2/29/2024 9:43 PM
+ * 2/29/2024 9:43 PM
  */
 @Service
 public class PaymentChannelService {

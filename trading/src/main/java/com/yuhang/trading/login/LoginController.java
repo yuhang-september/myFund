@@ -2,12 +2,12 @@ package com.yuhang.trading.login;
 
 import com.yuhang.service.entity.account.Account;
 import com.yuhang.trading.account.service.AccountService;
-import com.yuhang.trading.common.Constants;
-import com.yuhang.trading.common.JsonResult;
-import com.yuhang.trading.common.RedisService;
-import com.yuhang.trading.common.RuleException;
-import com.yuhang.trading.common.utils.DateUtil;
-import com.yuhang.trading.common.utils.SessionUtil;
+import com.yuhang.service.common.Constants;
+import com.yuhang.service.common.JsonResult;
+import com.yuhang.service.common.RedisService;
+import com.yuhang.service.common.RuleException;
+import com.yuhang.service.common.utils.DateUtil;
+import com.yuhang.service.common.utils.SessionUtil;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import org.apache.commons.lang3.StringUtils;

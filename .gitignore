@@ -38,3 +38,4 @@ mvnw
 qodana.yaml
 
 .mvn
+*.log

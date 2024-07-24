@@ -9,21 +9,62 @@
         fund_code,
         application_amount,
         status,
-        confirm_status,
-        confirm_amount,
-        confirm_share,
+        share,
+        payment_channel,
         create_time,
         last_update_time,
         type,
         trade_account_id
     </sql>
 
+    <resultMap id="resultMap" type="com.yuhang.service.entity.request.TradeRequest">
+        <id column="trade_request_id" property="tradeRequestId" javaType="String" jdbcType="CHAR"/>
+        <result column="fund_code" property="fundCode" javaType="String" jdbcType="VARCHAR"/>
+        <result column="application_amount" property="applicationAmount" javaType="Double" jdbcType="DECIMAL"/>
+        <result column="status" property="status" javaType="Integer" jdbcType="INTEGER"/>
+        <result column="type" property="type" javaType="String" jdbcType="VARCHAR"/>
+        <result column="share" property="type" javaType="Double" jdbcType="DECIMAL"/>
+        <result column="payment_channel" property="paymentChannel" javaType="Double" jdbcType="DECIMAL"/>
+        <result column="create_time" property="createTime" javaType="Date" jdbcType="TIMESTAMP"/>
+        <result column="last_update_time" property="lastUpdateTime" javaType="Date" jdbcType="TIMESTAMP"/>
+        <result column="trade_account_id" property="tradeAccountId" javaType="String" jdbcType="VARCHAR"/>
+    </resultMap>
+
     <insert id="insert" parameterType="com.yuhang.service.entity.request.TradeRequest">
         insert into tr_trade_request (<include refid="allColumns"/>) value (
         #{request.tradeRequestId},#{request.fundCode},#{request.applicationAmount},#{request.status},
-        #{request.confirmStatus},#{request.confirmAmount},#{request.confirmShare},#{request.createTime},
-        #{request.lastUpdateTime},#{request.type},#{request.tradeAccountId}
+        #{request.share},#{request.paymentChannel},#{request.createTime},#{request.lastUpdateTime},
+        #{request.type},#{request.tradeAccountId}
         )
     </insert>
 
+    <select id="querySingleTradeRequest" resultType="com.yuhang.service.entity.request.TradeRequest">
+        select <include refid="allColumns"/> from tr_trade_request where trade_request_id = #{reqeustId}
+    </select>
+
+    <select id="query" parameterType="java.util.List">
+        select
+        <include refid="allColumns"/>
+        from tr_trade_request t left join pd_fund p on t.fund_code = p.fund_code
+        <where>
+            1=1 and
+            t.trade_account_id = #{request.tradeAccountId}
+            <if test="tradeRequestId != null and tradeRequestId != ''">
+                and t.trade_rquest_id = #{request.tradeRequestId}
+            </if>
+            <if test="fundType != null and fundType != ''">
+                and p.type = #{request.fundType}
+            </if>
+            <if test="fundCode != null and fundCode != ''">
+                and t.fund_code = #{request.fundCode}
+            </if>
+            <if test="tradeType != null and tradeType != ''">
+                and t.type = #{request.tradeType}
+            </if>
+            <if test="startDate != null and endDate != null">
+                and create_time between startDate and endDate
+            </if>
+        </where>
+
+    </select>
 </mapper>

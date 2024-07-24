@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
  * Description:
  *
  * @author David
- * @Date 3/13/2024 5:49 PM
+ * 3/13/2024 5:49 PM
  */
 public interface AccountPaymentChannelRequestMapper {
 

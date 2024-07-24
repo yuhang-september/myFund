@@ -3,6 +3,7 @@ package com.yuhang.rabbitmq;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.jsontype.DefaultBaseTypeLimitingValidator;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Queue;
@@ -11,9 +12,12 @@ import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 
 
 @SpringBootApplication
+@MapperScan("com.yuhang.service.mapper")
+@ComponentScan(basePackages = "com.yuhang")
 public class RabbitmqApplication {
 
     static final String topicExchangeName = "fund-trade-exchange";

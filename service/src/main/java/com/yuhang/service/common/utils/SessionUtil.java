@@ -1,4 +1,4 @@
-package com.yuhang.trading.common.utils;
+package com.yuhang.service.common.utils;
 
 import com.yuhang.service.entity.account.Account;
 import jakarta.servlet.http.HttpServletRequest;
@@ -10,7 +10,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
  * Description:
  *
  * @author David
- * @Date 2/29/2024 12:15 AM
+ * 2/29/2024 12:15 AM
  */
 public class SessionUtil {
 

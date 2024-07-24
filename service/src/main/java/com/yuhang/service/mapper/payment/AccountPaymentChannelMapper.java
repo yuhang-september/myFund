@@ -9,7 +9,7 @@ import java.util.List;
  * Description:
  *
  * @author David
- * @Date 3/13/2024 5:49 PM
+ * 3/13/2024 5:49 PM
  */
 public interface AccountPaymentChannelMapper {
 
